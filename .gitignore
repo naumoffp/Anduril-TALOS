@@ -1,0 +1,33 @@
+# Rust build products
+target/
+
+# Nix build result links
+result
+result-*
+
+# Editor / OS files
+.vscode/
+*.swp
+.DS_Store
+
+# Local seL4 validation checkouts and build outputs
+examples/sel4-qemu-validation/sel4test/
+
+# Talos seL4 project: repo-synced seL4 kernel/libs (fetched by `repo sync` per
+# sel4/talos/default.xml) and build output. Not source - do not commit.
+sel4/talos/.repo/
+sel4/talos/kernel/
+sel4/talos/projects/
+sel4/talos/tools/
+sel4/talos/init-build.sh
+sel4/talos/griddle
+# Build directories: cbuild/ is the product rootserver, cbuild-tests/ the test
+# rootserver (see sel4/talos/easy-settings.cmake). .sel4_cache/ is toolchain
+# detection state written by init-build.sh.
+sel4/talos/cbuild*/
+sel4/talos/.sel4_cache/
+
+# Logs and crash files
+*.log
+core
+core.*
